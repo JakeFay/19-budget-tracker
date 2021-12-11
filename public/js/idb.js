@@ -2,7 +2,7 @@ const indexedDB = window.indexedDB;
 
 let db;
 
-var request = indexedDB.open("Budget-Tracker", 1);
+const request = indexedDB.open("Budget-Tracker", 1);
 
 request.onerror = function (event) {
 
@@ -20,7 +20,7 @@ request.onsuccess = function (event) {
 
 request.onupgradeneeded = (event) => {
     db = event.target.result;
-    db.createObjectStore(["budgets"], { autoIncrement: true });
+    db.createObjectStore("budgets", { autoIncrement: true });
 
 }
 
