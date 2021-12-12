@@ -27,7 +27,9 @@ request.onupgradeneeded = (event) => {
 function saveRecord(budgets) {
     let action = db.transaction(["budgets"], 'readwrite').objectStore("budgets");
 
-    action.add(budgets);
+    let request = action.add(budgets);
+    console.log(request)
+
 }
 
 function saveToDB() {
